@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{75E2410B-D8D4-497E-B0E3-CC8BF869D84E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wrox.BDD.Specs.Core</RootNamespace>
+    <AssemblyName>Wrox.BDD.Specs.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\packages\Machine.Specifications-net-4.0-Release\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.5.7.10213\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain_Specs\when_checking_if_game_has_a_3_in_a_diagonal_line.cs" />
+    <Compile Include="Domain_Specs\when_checking_if_the_current_player_has_won_the_game.cs" />
+    <Compile Include="Domain_Specs\when_generating_a_readonly_view_for_rendering.cs" />
+    <Compile Include="Domain_Specs\when_placing_a_token_on_the_board.cs" />
+    <Compile Include="Domain_Specs\when_checking_for_a_token_on_the_grid.cs" />
+    <Compile Include="Domain_Specs\when_placing_a_winning_token_on_the_board.cs" />
+    <Compile Include="Domain_Specs\when_trying_to_parsing_a_valid_coordinate.cs" />
+    <Compile Include="Domain_Specs\with_a_tictactoe_game.cs" />
+    <Compile Include="Presentation_Specs\when_a_player_gets_3_tokens_in_a_row.cs" />
+    <Compile Include="Presentation_Specs\when_a_player_places_a_token.cs" />
+    <Compile Include="Presentation_Specs\when_rendering_the_game.cs" />
+    <Compile Include="Presentation_Specs\when_starting_a_new_game.cs" />
+    <Compile Include="Presentation_Specs\with_a_presenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wrox.BDD.Domain\Wrox.BDD.Domain.csproj">
+      <Project>{22420E27-9E24-49E6-B275-8B7E3867AD29}</Project>
+      <Name>Wrox.BDD.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wrox.BDD.Ui.Console\Wrox.BDD.Ui.Console.csproj">
+      <Project>{45EE6583-5DD7-46E9-B443-BE4646A4A21F}</Project>
+      <Name>Wrox.BDD.Ui.Console</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

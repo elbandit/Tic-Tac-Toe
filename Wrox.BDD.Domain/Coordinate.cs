@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Wrox.BDD.Domain
+{
+    public class Coordinate : IEquatable<Coordinate>
+    {
+        public Coordinate(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
+
+        public int X { get; private set; }
+        public int Y { get; private set; }
+
+        public bool Equals(Coordinate other)
+        {
+            return this.X == other.X && this.Y == other.Y;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0},{1}", X, Y);
+        }
+
+        public static Coordinate parse(string move_coordinates)
+        {            
+            var coordinates = move_coordinates.Split(',');
+
+            return new Coordinate(int.Parse(coordinates[0].ToString()), int.Parse(coordinates[1].ToString()));           
+        }
+    }
+}
