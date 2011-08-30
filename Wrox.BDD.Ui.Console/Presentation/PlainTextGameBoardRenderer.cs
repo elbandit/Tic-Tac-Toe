@@ -6,12 +6,12 @@ using Wrox.BDD.Domain;
 
 namespace Wrox.BDD.Ui.Console.Presentation
 {
-    public class PlainTextGameBoardRenderer : BoardRenderer 
+    public class PlainTextGameBoardRenderer : BoardRenderer
     {
         public string render(Game game)
         {
             var squares = game.get_game_view().squares;
-            
+
             var grid_display = new StringBuilder();
             var row_seperator = "";
 
@@ -25,7 +25,8 @@ namespace Wrox.BDD.Ui.Console.Presentation
 
                 for (int column = 0; column <= 2; column++)
                 {
-                    row_display.Append(string.Format("{0} {1} ", pipe, pad_if_square_empty(squares[row, column])));
+                    row_display.Append(string.Format("{0} {1} ", pipe,
+                                  pad_if_square_empty(squares[row, column])));
                     pipe = "|";
                 }
 
@@ -41,4 +42,5 @@ namespace Wrox.BDD.Ui.Console.Presentation
             return String.IsNullOrEmpty(value) ? " " : value;
         }
     }
+
 }

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{75E2410B-D8D4-497E-B0E3-CC8BF869D84E}</ProjectGuid>
+    <ProjectGuid>{5CB03F72-98CF-4249-919B-69C6F19A03C0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Wrox.BDD.Specs.Core</RootNamespace>
@@ -49,15 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain_Specs\when_checking_if_game_has_a_3_in_a_diagonal_line.cs" />
-    <Compile Include="Domain_Specs\when_checking_if_the_current_player_has_won_the_game.cs" />
-    <Compile Include="Domain_Specs\when_generating_a_readonly_view_for_rendering.cs" />
-    <Compile Include="Domain_Specs\when_placing_a_token_on_the_board.cs" />
+    <Compile Include="Domain_Specs\when_trying_to_parse_an_invalid_coordinate.cs" />
+    <Compile Include="Domain_Specs\when_checking_for_a_square_on_the_grid_for_an_invalid_coordinate.cs" />
+    <Compile Include="Domain_Specs\when_asked_if_a_token_can_be_placed_on_a_square_outside_of_grid.cs" />
+    <Compile Include="Domain_Specs\when_asked_if_a_token_can_be_placed_on_an_occupied_square.cs" />
+    <Compile Include="Domain_Specs\when_a_player_gets_3_tokens_in_a_row.cs" />
+    <Compile Include="Domain_Specs\when_checking_for_a_square_on_the_grid_for_a_valid_coordinate.cs" />
     <Compile Include="Domain_Specs\when_checking_for_a_token_on_the_grid.cs" />
+    <Compile Include="Domain_Specs\when_checking_if_game_has_a_3_in_a_diagonal_line.cs" />
+    <Compile Include="Domain_Specs\when_generating_a_readonly_view_for_rendering.cs" />
+    <Compile Include="Domain_Specs\when_parsing_a_valid_coordinate.cs" />
+    <Compile Include="Domain_Specs\when_placing_a_token_on_the_board.cs" />
     <Compile Include="Domain_Specs\when_placing_a_winning_token_on_the_board.cs" />
-    <Compile Include="Domain_Specs\when_trying_to_parsing_a_valid_coordinate.cs" />
     <Compile Include="Domain_Specs\with_a_tictactoe_game.cs" />
-    <Compile Include="Presentation_Specs\when_a_player_gets_3_tokens_in_a_row.cs" />
+    <Compile Include="Domain_Specs\when_checking_if_the_current_player_has_won_the_game.cs" />
+    <Compile Include="Presentation_Specs\when_a_player_places_enters_an_invalid_coordinate.cs" />
+    <Compile Include="Presentation_Specs\when_a_player_places_a_token_on_a_coordinate_outside_of_the_grid.cs" />
+    <Compile Include="Presentation_Specs\when_a_player_places_a_token_on_an_occupied_square.cs" />
     <Compile Include="Presentation_Specs\when_a_player_places_a_token.cs" />
     <Compile Include="Presentation_Specs\when_rendering_the_game.cs" />
     <Compile Include="Presentation_Specs\when_starting_a_new_game.cs" />
@@ -66,11 +74,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Wrox.BDD.Domain\Wrox.BDD.Domain.csproj">
-      <Project>{22420E27-9E24-49E6-B275-8B7E3867AD29}</Project>
+      <Project>{9C1092C0-C4A6-42DF-9472-EC63D0BFF5DA}</Project>
       <Name>Wrox.BDD.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Wrox.BDD.Ui.Console\Wrox.BDD.Ui.Console.csproj">
-      <Project>{45EE6583-5DD7-46E9-B443-BE4646A4A21F}</Project>
+      <Project>{513F8A17-8897-4766-B43A-BE4E09CC0B83}</Project>
       <Name>Wrox.BDD.Ui.Console</Name>
     </ProjectReference>
   </ItemGroup>

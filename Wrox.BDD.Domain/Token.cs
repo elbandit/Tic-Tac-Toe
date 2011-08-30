@@ -30,4 +30,5 @@ namespace Wrox.BDD.Domain
             return value;
         }
     }
+
 }

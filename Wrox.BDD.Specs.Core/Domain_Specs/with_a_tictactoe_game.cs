@@ -6,7 +6,7 @@ using Wrox.BDD.Domain;
 using Rhino.Mocks;
 
 namespace Wrox.BDD.Specs.Core.Domain_Specs
-{
+{   
     public abstract class with_a_tictactoe_game
     {
         public with_a_tictactoe_game()
@@ -22,5 +22,5 @@ namespace Wrox.BDD.Specs.Core.Domain_Specs
         protected static PlayerTracker player_tracker;
         protected static Grid tic_tac_toe_grid;
         protected static LineChecker line_checker;
-    }
+    }     
 }

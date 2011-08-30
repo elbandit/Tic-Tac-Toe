@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Wrox.BDD.Domain
 {
-    public interface Square
+    public enum InvalidMoveReason
     {
-        bool contains_token_matching(Token token);
-        bool contains_token();
+        SquareOccupied,
+        CoordinateOutsideOfGrid
     }
 }

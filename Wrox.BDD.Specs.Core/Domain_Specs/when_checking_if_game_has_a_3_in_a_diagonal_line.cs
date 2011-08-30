@@ -1,6 +1,10 @@
-﻿using Machine.Specifications;
-using Rhino.Mocks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Machine.Specifications;
 using Wrox.BDD.Domain;
+using Rhino.Mocks;
 using NUnit.Framework;
 
 namespace Wrox.BDD.Specs.Core.Domain_Specs
@@ -42,13 +46,14 @@ namespace Wrox.BDD.Specs.Core.Domain_Specs
                    Arg<Coordinate>.Matches(c => c.Equals(coordinate_2_2))));
 
             square.AssertWasCalled(x => x.contains_token_matching(
-                   Arg<Token>.Matches(c => c.Equals(Tokens.x_token))), o => o.Repeat.Times(3));
+                   Arg<Token>.Matches(c => c.Equals(Tokens.x_token))),
+                                      o => o.Repeat.Times(3));
         };
 
         private It should_find_a_winning_line = () =>
         {
             Assert.That(result, Is.True);
-        }; 
+        };
 
         private static DiagonalWinningLineChecker SUT;
         private static Grid grid;

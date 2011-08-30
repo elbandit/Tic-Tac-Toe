@@ -16,7 +16,9 @@ namespace Wrox.BDD.Domain
 
         public void finish_players_move()
         {
-            _current_playing_token = (_current_playing_token.Equals(Tokens.x_token)) ? Tokens.o_token : Tokens.x_token;
+            _current_playing_token = (_current_playing_token.Equals(Tokens.x_token))
+                                                   ? Tokens.o_token : Tokens.x_token;
         }
     }
+
 }

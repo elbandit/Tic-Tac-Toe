@@ -15,7 +15,6 @@ namespace Wrox.BDD.Specs.Core.Domain_Specs
         {
             coordinate_text = "1,1";
             coordinate = Coordinate.parse(coordinate_text);
-
             player_tracker.Stub(x => x.current_player()).Return(Tokens.x_token);
         };
 
@@ -28,15 +27,15 @@ namespace Wrox.BDD.Specs.Core.Domain_Specs
         {
             tic_tac_toe_grid.AssertWasCalled(x => x.place_token_at(
                 Arg<Coordinate>.Matches(c => c.Equals(coordinate)),
-                Arg<Token>.Matches(c => c.Equals(Tokens.x_token))));            
+                Arg<Token>.Matches(c => c.Equals(Tokens.x_token))));
         };
 
         private It should_alternate_the_player = () =>
         {
             player_tracker.AssertWasCalled(x => x.finish_players_move());
-        };        
-  
+        };
+
         private static Coordinate coordinate;
-        private static string coordinate_text;    
+        private static string coordinate_text;
     }
 }

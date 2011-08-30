@@ -1,6 +1,11 @@
-﻿using Machine.Specifications;
-using Rhino.Mocks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Machine.Specifications;
 using Wrox.BDD.Domain;
+using NUnit.Framework;
+using Rhino.Mocks;
 
 namespace Wrox.BDD.Specs.Core.Domain_Specs
 {
@@ -12,7 +17,9 @@ namespace Wrox.BDD.Specs.Core.Domain_Specs
             coordinate_text = "1,1";
             coordinate = Coordinate.parse(coordinate_text);
 
-            line_checker.Stub(x => x.contains_a_winning_line(Arg<Grid>.Is.Anything)).Return(true);
+            line_checker.Stub(x =>
+                              x.contains_a_winning_line(Arg<Grid>.Is.Anything)).Return(true);
+
             player_tracker.Stub(x => x.current_player()).Return(Tokens.x_token);
         };
 

@@ -27,10 +27,17 @@ namespace Wrox.BDD.Domain
         }
 
         public static Coordinate parse(string move_coordinates)
-        {            
+        {
             var coordinates = move_coordinates.Split(',');
 
-            return new Coordinate(int.Parse(coordinates[0].ToString()), int.Parse(coordinates[1].ToString()));           
+            return new Coordinate(int.Parse(coordinates[0].ToString()),
+                                  int.Parse(coordinates[1].ToString()));
+        }
+
+        public static bool can_parse(string move_coordinates)
+        { 
+            // Use regular expression!!!
+            return true;
         }
     }
 }

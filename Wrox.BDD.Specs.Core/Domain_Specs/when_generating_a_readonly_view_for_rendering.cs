@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Machine.Specifications;
 using Wrox.BDD.Domain;
 using NUnit.Framework;
@@ -26,12 +28,16 @@ namespace Wrox.BDD.Specs.Core.Domain_Specs
 
         private It should_have_the_X_token_in_the_correct_position = () =>
         {
-            Assert.That(result.squares[coordinate_with_X_token.X, coordinate_with_X_token.Y], Is.EqualTo(Tokens.x_token.value));
+            Assert.That(result.squares[coordinate_with_X_token.X,
+                                      coordinate_with_X_token.Y],
+                       Is.EqualTo(Tokens.x_token.value));
         };
 
         private It should_have_the_O_token_in_the_correct_position = () =>
         {
-            Assert.That(result.squares[coordinate_with_O_token.X, coordinate_with_O_token.Y], Is.EqualTo(Tokens.o_token.value));
+            Assert.That(result.squares[coordinate_with_O_token.X,
+                                       coordinate_with_O_token.Y],
+                                      Is.EqualTo(Tokens.o_token.value));
         };
 
         private static GridView result;

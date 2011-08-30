@@ -28,7 +28,7 @@ namespace Wrox.BDD.Domain
             _grid.place_token_at(coordinate, current_token());
 
             if (!the_current_player_has_won_the_game())
-                _player_tracker.finish_players_move();                
+                _player_tracker.finish_players_move();   
         }
 
         public GridView get_game_view()
@@ -39,6 +39,22 @@ namespace Wrox.BDD.Domain
         public bool the_current_player_has_won_the_game()
         {
             return _line_checker.contains_a_winning_line(_grid);
+        }
+
+        public bool can_place_token_for_current_player_at(Coordinate coordinate)
+        {
+            return _grid.is_square_at(coordinate) ? !_grid.square_at(coordinate).contains_token() : false;
+        }
+
+        public InvalidMoveReason reason_why_the_current_player_cannot_place_token_at(Coordinate coordinate)
+        {
+            if (!_grid.is_square_at(coordinate))
+                return InvalidMoveReason.CoordinateOutsideOfGrid;
+            else if (_grid.square_at(coordinate).contains_token())
+                return InvalidMoveReason.SquareOccupied;
+            else
+                throw new GameRuleException("There is no reason why a token cannot be placed at coordinate {0}. " +
+                                            "The coordinate is valid.");
         }
     }
 }

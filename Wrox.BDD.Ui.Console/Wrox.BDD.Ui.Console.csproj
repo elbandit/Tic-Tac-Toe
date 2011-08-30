@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{45EE6583-5DD7-46E9-B443-BE4646A4A21F}</ProjectGuid>
+    <ProjectGuid>{513F8A17-8897-4766-B43A-BE4E09CC0B83}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Wrox.BDD.Ui.Console</RootNamespace>
@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Wrox.BDD.Domain\Wrox.BDD.Domain.csproj">
-      <Project>{22420E27-9E24-49E6-B275-8B7E3867AD29}</Project>
+      <Project>{9C1092C0-C4A6-42DF-9472-EC63D0BFF5DA}</Project>
       <Name>Wrox.BDD.Domain</Name>
     </ProjectReference>
   </ItemGroup>

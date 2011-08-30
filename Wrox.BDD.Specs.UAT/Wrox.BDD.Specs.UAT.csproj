@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{63AA753A-E3A8-4C9B-A653-0DCD7B05A27A}</ProjectGuid>
+    <ProjectGuid>{D0CD8D02-5FA7-4EEC-9004-BFAFECC3DACA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Wrox.BDD.Specs.UAT</RootNamespace>
@@ -62,16 +62,6 @@
     <Compile Include="Steps\GamePlaySteps.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Wrox.BDD.Domain\Wrox.BDD.Domain.csproj">
-      <Project>{22420E27-9E24-49E6-B275-8B7E3867AD29}</Project>
-      <Name>Wrox.BDD.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Wrox.BDD.Ui.Console\Wrox.BDD.Ui.Console.csproj">
-      <Project>{45EE6583-5DD7-46E9-B443-BE4646A4A21F}</Project>
-      <Name>Wrox.BDD.Ui.Console</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Features\GamePlay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GamePlay.feature.cs</LastGenOutput>
@@ -80,6 +70,16 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PlayerWinsAGame.feature.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wrox.BDD.Domain\Wrox.BDD.Domain.csproj">
+      <Project>{9C1092C0-C4A6-42DF-9472-EC63D0BFF5DA}</Project>
+      <Name>Wrox.BDD.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wrox.BDD.Ui.Console\Wrox.BDD.Ui.Console.csproj">
+      <Project>{513F8A17-8897-4766-B43A-BE4E09CC0B83}</Project>
+      <Name>Wrox.BDD.Ui.Console</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

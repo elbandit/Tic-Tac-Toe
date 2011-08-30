@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Machine.Specifications;
 using Wrox.BDD.Domain;
 using Wrox.BDD.Ui.Console.Presentation;
@@ -13,7 +16,8 @@ namespace Wrox.BDD.Specs.Core.Presentation_Specs
         {
             var square_array = new string[3, 3];
             game = MockRepository.GenerateStub<Game>();
-            game.Stub(x => x.get_game_view()).Return(new GridView() { squares = square_array });
+            game.Stub(x => x.get_game_view())
+                       .Return(new GridView() { squares = square_array });
             SUT = new PlainTextGameBoardRenderer();
         };
 

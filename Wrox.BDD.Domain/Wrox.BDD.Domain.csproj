@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{22420E27-9E24-49E6-B275-8B7E3867AD29}</ProjectGuid>
+    <ProjectGuid>{9C1092C0-C4A6-42DF-9472-EC63D0BFF5DA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Wrox.BDD.Domain</RootNamespace>
@@ -41,10 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coordinate.cs" />
+    <Compile Include="DiagonalWinningLineChecker.cs" />
+    <Compile Include="DomainException.cs" />
     <Compile Include="EmptyPlayingSquare.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="GameRuleException.cs" />
     <Compile Include="Grid.cs" />
     <Compile Include="GridView.cs" />
+    <Compile Include="InvalidMoveReason.cs" />
     <Compile Include="LineChecker.cs" />
     <Compile Include="NineSquareGrid.cs" />
     <Compile Include="PlayerTracker.cs" />
@@ -54,7 +58,6 @@
     <Compile Include="TicTacToe.cs" />
     <Compile Include="Token.cs" />
     <Compile Include="TokenTracker.cs" />
-    <Compile Include="DiagonalWinningLineChecker.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

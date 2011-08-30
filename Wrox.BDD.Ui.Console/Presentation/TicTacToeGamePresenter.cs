@@ -21,48 +21,70 @@ namespace Wrox.BDD.Ui.Console.Presentation
 
         public void start()
         {
-            _game_view.WriteLine("=========================");
-            _game_view.WriteLine("Lets Play Tic-Tac-Toe!!!!");
-            _game_view.WriteLine("=========================");
-            _game_view.WriteLine("When prompted please input the");
-            _game_view.WriteLine("coordinates of your move in the");
-            _game_view.WriteLine("format row,col e.g. 0,1 for the");
-            _game_view.WriteLine("first row and the second column");
-            _game_view.WriteLine("");
+            _game_view.write_line("=========================");
+            _game_view.write_line("Lets Play Tic-Tac-Toe!!!!");
+            _game_view.write_line("=========================");
+            _game_view.write_line("When prompted please input the");
+            _game_view.write_line("coordinates of your move in the");
+            _game_view.write_line("format row,col e.g. 0,1 for the");
+            _game_view.write_line("first row and the second column");
+            _game_view.write_line("");
 
-            prompt_for_next_move();      
+            prompt_for_next_move();
         }
 
         private void prompt_for_next_move()
         {
-            _game_view.WriteLine(String.Format("{0}, make your move.", _game.current_token()));
-            _game_view.WriteLine("");
+            _game_view.write_line(String.Format(
+                           "{0}, make your move.", _game.current_token()));
+            _game_view.write_line("");
             _game_view.get_coordinates_for_next_move();
         }
 
         public void update_game_with_move(string move_coordinates)
         {
-            var coordinate = Coordinate.parse(move_coordinates);
+            if (Coordinate.can_parse(move_coordinates))
+            {
+                var coordinate = Coordinate.parse(move_coordinates);
 
-            _game.place_token_for_current_player_at(coordinate);
+                if (_game.can_place_token_for_current_player_at(coordinate))
+                    _game.place_token_for_current_player_at(coordinate);
+                else            
+                    display_reason_for_not_being_able_to_place_token_at(coordinate);            
+            }
+            else
+                _game_view.write_line(String.Format("{0} are invalid coordinates for a move, please use the format col,row.", move_coordinates));
 
             display_game();
-            
+
             if (_game.the_current_player_has_won_the_game())
                 announce_current_player_as_the_winner();
             else
                 prompt_for_next_move();                            
         }
 
-        private void announce_current_player_as_the_winner()
+        private void display_reason_for_not_being_able_to_place_token_at(Coordinate coordinate)
         {
-            _game_view.WriteLine(string.Format("{0} has won the game!", _game.current_token()));
+            var reason = _game.reason_why_the_current_player_cannot_place_token_at(coordinate);
+
+            if (reason == InvalidMoveReason.SquareOccupied)
+                _game_view.write_line(String.Format("There is already a token in the square at coordinate {0}.", coordinate));
+            if (reason == InvalidMoveReason.CoordinateOutsideOfGrid)
+                _game_view.write_line(String.Format("There is not a square at coordinate {0}.", coordinate));
+
+            _game_view.write_line("");
         }
 
         private void display_game()
         {
-            _game_view.Write(_board_renderer.render(_game));
-            _game_view.WriteLine("");
+            _game_view.write(_board_renderer.render(_game));
+            _game_view.write_line("");
+        }
+
+        private void announce_current_player_as_the_winner()
+        {
+            _game_view.write_line(string.Format("{0} has won the game!",
+                                _game.current_token()));
         }
     }
 }

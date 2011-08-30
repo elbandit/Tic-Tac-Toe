@@ -11,43 +11,39 @@ namespace Wrox.BDD.Specs.UAT
     public class FakeGameView : GameView
     {
         private TicTacToeGamePresenter _presenter;
-        private StringBuilder _display = new StringBuilder(); 
-               
-        public FakeGameView()
-        {
-            _presenter = new TicTacToeGamePresenter(this,
-                                                    new TicTacToe(new TokenTracker(), new NineSquareGrid(), new DiagonalWinningLineChecker()),
-                                                    new PlainTextGameBoardRenderer());
-
-
-            GameStorage.presenter = _presenter;
-
-            _presenter.start();
-        }
+        private StringBuilder _display = new StringBuilder();
 
         public string display()
         {
             return _display.ToString();
         }
 
-        public void clean_display()
+        public FakeGameView()
         {
-            _display.Clear();
+            var _presenter = new TicTacToeGamePresenter(this, new TicTacToe(new TokenTracker(), new NineSquareGrid(), new DiagonalWinningLineChecker()), new PlainTextGameBoardRenderer());
+
+            GameStorage.presenter = _presenter;
+            _presenter.start();
         }
 
-        public void WriteLine(string message)
+        public void write_line(string message)
         {
             _display.AppendLine(message);
         }
 
-        public void get_coordinates_for_next_move()
-        {
-            
-        }
-
-        public void Write(string message)
+        public void write(string message)
         {
             _display.Append(message);
+        }
+
+        public void get_coordinates_for_next_move()
+        {
+
+        }
+
+        public void clean_display()
+        {
+            _display.Clear();
         }
     }
 }

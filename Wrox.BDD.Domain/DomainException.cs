@@ -5,9 +5,7 @@ using System.Text;
 
 namespace Wrox.BDD.Domain
 {
-    public interface Square
+    class DomainException
     {
-        bool contains_token_matching(Token token);
-        bool contains_token();
     }
 }
