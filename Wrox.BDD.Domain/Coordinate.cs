@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Wrox.BDD.Domain
 {
@@ -35,9 +35,10 @@ namespace Wrox.BDD.Domain
         }
 
         public static bool can_parse(string move_coordinates)
-        { 
-            // Use regular expression!!!
-            return true;
+        {
+            var coordinate_regular_expression = new Regex(@"^\d*,\d*$");
+
+            return coordinate_regular_expression.IsMatch(move_coordinates);
         }
     }
 }

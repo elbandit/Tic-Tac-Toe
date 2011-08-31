@@ -15,5 +15,6 @@ namespace Wrox.BDD.Domain
 
         GridView get_game_view();
         bool the_current_player_has_won_the_game();
+        bool has_ended_in_a_draw();
     }
 }

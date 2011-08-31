@@ -43,6 +43,11 @@ namespace Wrox.BDD.Specs.Core.Presentation_Specs
             game.AssertWasCalled(x => x.the_current_player_has_won_the_game());
         };
 
+        private It should_check_if_the_game_has_ended_in_a_draw = () =>
+        {
+            game.AssertWasCalled(x => x.has_ended_in_a_draw());
+        };
+
         private static Coordinate coordinate;
         private static string coordinate_text;
     }

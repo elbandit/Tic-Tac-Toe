@@ -55,10 +55,10 @@ namespace Wrox.BDD.Specs.UAT.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Diagonal Win")]
-        public virtual void DiagonalWin()
+        [NUnit.Framework.DescriptionAttribute("Diagonal Win Left to Right Token X")]
+        public virtual void DiagonalWinLeftToRightTokenX()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Diagonal Win", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Diagonal Win Left to Right Token X", ((string[])(null)));
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
@@ -92,6 +92,182 @@ this.ScenarioSetup(scenarioInfo);
 #line 15
  testRunner.Then("I should see the following displayed:", " X |   | O \r\n-----------\r\n   | X | O \r\n-----------\r\n   |   | X \r\n\r\nX has won the " +
                     "game!\r\n", ((TechTalk.SpecFlow.Table)(null)));
+#line hidden
+            testRunner.CollectScenarioErrors();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Diagonal Win Left to Right Token O")]
+        public virtual void DiagonalWinLeftToRightTokenO()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Diagonal Win Left to Right Token O", ((string[])(null)));
+#line 27
+this.ScenarioSetup(scenarioInfo);
+#line 28
+    testRunner.Given("that I have started a new game");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "player",
+                        "row",
+                        "column"});
+            table2.AddRow(new string[] {
+                        "X",
+                        "0",
+                        "2"});
+            table2.AddRow(new string[] {
+                        "O",
+                        "1",
+                        "1"});
+            table2.AddRow(new string[] {
+                        "X",
+                        "1",
+                        "2"});
+            table2.AddRow(new string[] {
+                        "O",
+                        "0",
+                        "0"});
+            table2.AddRow(new string[] {
+                        "X",
+                        "2",
+                        "0"});
+#line 29
+ testRunner.And("the following moves are played:", ((string)(null)), table2);
+#line 36
+    testRunner.When("a player types in the coordinates \"2,2\"");
+#line hidden
+#line 37
+ testRunner.Then("I should see the following displayed:", " O |   | X \r\n-----------\r\n   | O | X \r\n-----------\r\n X |   | O \r\n\r\nO has won the " +
+                    "game!\r\n", ((TechTalk.SpecFlow.Table)(null)));
+#line hidden
+            testRunner.CollectScenarioErrors();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Alternative Diagonal Win Right to Left Token X")]
+        public virtual void AlternativeDiagonalWinRightToLeftTokenX()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Alternative Diagonal Win Right to Left Token X", ((string[])(null)));
+#line 49
+this.ScenarioSetup(scenarioInfo);
+#line 50
+    testRunner.Given("that I have started a new game");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "player",
+                        "row",
+                        "column"});
+            table3.AddRow(new string[] {
+                        "X",
+                        "1",
+                        "1"});
+            table3.AddRow(new string[] {
+                        "O",
+                        "1",
+                        "2"});
+            table3.AddRow(new string[] {
+                        "X",
+                        "0",
+                        "2"});
+            table3.AddRow(new string[] {
+                        "O",
+                        "2",
+                        "2"});
+#line 51
+ testRunner.And("the following moves are played:", ((string)(null)), table3);
+#line 57
+    testRunner.When("a player types in the coordinates \"2,0\"");
+#line hidden
+#line 58
+ testRunner.Then("I should see the following displayed:", "   |   | X \r\n-----------\r\n   | X | O \r\n-----------\r\n X |   | O \r\n\r\nX has won the " +
+                    "game!\r\n", ((TechTalk.SpecFlow.Table)(null)));
+#line hidden
+            testRunner.CollectScenarioErrors();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Alternative Diagonal Win Right to Left Token O")]
+        public virtual void AlternativeDiagonalWinRightToLeftTokenO()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Alternative Diagonal Win Right to Left Token O", ((string[])(null)));
+#line 70
+this.ScenarioSetup(scenarioInfo);
+#line 71
+    testRunner.Given("that I have started a new game");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "player",
+                        "row",
+                        "column"});
+            table4.AddRow(new string[] {
+                        "X",
+                        "1",
+                        "2"});
+            table4.AddRow(new string[] {
+                        "O",
+                        "1",
+                        "1"});
+            table4.AddRow(new string[] {
+                        "X",
+                        "2",
+                        "2"});
+            table4.AddRow(new string[] {
+                        "O",
+                        "0",
+                        "2"});
+            table4.AddRow(new string[] {
+                        "X",
+                        "2",
+                        "1"});
+#line 72
+ testRunner.And("the following moves are played:", ((string)(null)), table4);
+#line 79
+    testRunner.When("a player types in the coordinates \"2,0\"");
+#line hidden
+#line 80
+ testRunner.Then("I should see the following displayed:", "   |   | O \r\n-----------\r\n   | O | X \r\n-----------\r\n O | X | X \r\n\r\nO has won the " +
+                    "game!\r\n", ((TechTalk.SpecFlow.Table)(null)));
+#line hidden
+            testRunner.CollectScenarioErrors();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Vertical Win")]
+        public virtual void VerticalWin()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Vertical Win", ((string[])(null)));
+#line 91
+this.ScenarioSetup(scenarioInfo);
+#line 92
+    testRunner.Given("that I have started a new game");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "player",
+                        "row",
+                        "column"});
+            table5.AddRow(new string[] {
+                        "X",
+                        "1",
+                        "1"});
+            table5.AddRow(new string[] {
+                        "O",
+                        "0",
+                        "2"});
+            table5.AddRow(new string[] {
+                        "X",
+                        "0",
+                        "1"});
+            table5.AddRow(new string[] {
+                        "O",
+                        "1",
+                        "2"});
+#line 93
+ testRunner.And("the following moves are played:", ((string)(null)), table5);
+#line 99
+    testRunner.When("a player types in the coordinates \"2,1\"");
+#line hidden
+#line 100
+ testRunner.Then("I should see the following displayed:", "X has won the game!\r\n\r\n   | X | O \r\n-----------\r\n   | X | O \r\n-----------\r\n   | X" +
+                    " |   \r\n\r\n", ((TechTalk.SpecFlow.Table)(null)));
 #line hidden
             testRunner.CollectScenarioErrors();
         }

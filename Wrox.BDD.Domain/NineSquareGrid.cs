@@ -52,5 +52,19 @@ namespace Wrox.BDD.Domain
             else
                 return true;
         }
+
+        public bool is_full()
+        {
+            bool is_full = true;
+
+              for (int row = 0; row < 3; row++)
+                  for (int column = 0; column < 3; column++)
+                  { 
+                    if (!contains_token_at(Coordinate.parse(String.Format("{0},{1}", row, column))))
+                        is_full = false;
+                  }
+
+            return is_full;
+        }
     }    
 }

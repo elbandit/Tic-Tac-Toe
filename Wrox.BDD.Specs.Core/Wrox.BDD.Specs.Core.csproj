@@ -49,6 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain_Specs\when_parsing_an_invalid_coordinate.cs" />
+    <Compile Include="Domain_Specs\when_checking_if_game_has_a_3_in_a_diagonal_line_right_to_left.cs" />
+    <Compile Include="Domain_Specs\when_checking_if_a_full_grid_is_full.cs" />
+    <Compile Include="Domain_Specs\when_checking_if_the_game_has_ended_in_a_draw.cs" />
     <Compile Include="Domain_Specs\when_trying_to_parse_an_invalid_coordinate.cs" />
     <Compile Include="Domain_Specs\when_checking_for_a_square_on_the_grid_for_an_invalid_coordinate.cs" />
     <Compile Include="Domain_Specs\when_asked_if_a_token_can_be_placed_on_a_square_outside_of_grid.cs" />

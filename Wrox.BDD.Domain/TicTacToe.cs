@@ -56,5 +56,10 @@ namespace Wrox.BDD.Domain
                 throw new GameRuleException("There is no reason why a token cannot be placed at coordinate {0}. " +
                                             "The coordinate is valid.");
         }
+
+        public bool has_ended_in_a_draw()
+        {
+            return _grid.is_full();
+        }
     }
 }

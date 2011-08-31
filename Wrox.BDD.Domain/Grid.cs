@@ -10,6 +10,7 @@ namespace Wrox.BDD.Domain
         void place_token_at(Coordinate coordinate, Token token);        
         bool contains_token_at(Coordinate coordinate);
         bool is_square_at(Coordinate coordinate);
+        bool is_full();
         GridView generate_grid_view();
         Square square_at(Coordinate coordinate);
     }

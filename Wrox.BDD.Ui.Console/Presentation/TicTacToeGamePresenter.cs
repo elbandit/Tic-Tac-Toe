@@ -43,24 +43,39 @@ namespace Wrox.BDD.Ui.Console.Presentation
 
         public void update_game_with_move(string move_coordinates)
         {
+            place_token_for_players_input_of(move_coordinates);
+
+            display_game();
+
+            display_game_status();                          
+        }
+
+        private void display_game_status()
+        {
+            if (_game.the_current_player_has_won_the_game())
+                announce_current_player_as_the_winner();
+            else if (_game.has_ended_in_a_draw())
+                announnce_that_the_game_has_ended_in_a_draw();
+            else
+                prompt_for_next_move();
+        }
+
+        private void place_token_for_players_input_of(string move_coordinates)
+        {
             if (Coordinate.can_parse(move_coordinates))
             {
                 var coordinate = Coordinate.parse(move_coordinates);
 
                 if (_game.can_place_token_for_current_player_at(coordinate))
                     _game.place_token_for_current_player_at(coordinate);
-                else            
-                    display_reason_for_not_being_able_to_place_token_at(coordinate);            
+                else
+                    display_reason_for_not_being_able_to_place_token_at(coordinate);
             }
             else
+            {
                 _game_view.write_line(String.Format("{0} are invalid coordinates for a move, please use the format col,row.", move_coordinates));
-
-            display_game();
-
-            if (_game.the_current_player_has_won_the_game())
-                announce_current_player_as_the_winner();
-            else
-                prompt_for_next_move();                            
+                _game_view.write_line("");
+            }
         }
 
         private void display_reason_for_not_being_able_to_place_token_at(Coordinate coordinate)
@@ -85,6 +100,11 @@ namespace Wrox.BDD.Ui.Console.Presentation
         {
             _game_view.write_line(string.Format("{0} has won the game!",
                                 _game.current_token()));
+        }
+
+        private void announnce_that_the_game_has_ended_in_a_draw()
+        { 
+            _game_view.write_line("The game has ended in a draw!");            
         }
     }
 }

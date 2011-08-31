@@ -52,6 +52,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GamePlay.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\PlayerDrawsAGame.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlayerDrawsAGame.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\PlayerWinsAGame.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -65,6 +70,10 @@
     <None Include="Features\GamePlay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GamePlay.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\PlayerDrawsAGame.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PlayerDrawsAGame.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\PlayerWinsAGame.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
