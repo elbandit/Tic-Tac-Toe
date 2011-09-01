@@ -20,7 +20,7 @@ namespace Wrox.BDD.Specs.UAT
 
         public FakeGameView()
         {
-            var _presenter = new TicTacToeGamePresenter(this, new TicTacToe(new TokenTracker(), new NineSquareGrid(), new DiagonalWinningLineChecker()), new PlainTextGameBoardRenderer());
+            var _presenter = new TicTacToeGamePresenter(this, new TicTacToe(new TokenTracker(), new NineSquareGrid(), new NineSquareGridWinningLineChecker(new DiagonalWinningLineChecker(), new ColumnWinningLineChecker(), new RowWinningLineChecker())), new PlainTextGameBoardRenderer());
 
             GameStorage.presenter = _presenter;
             _presenter.start();

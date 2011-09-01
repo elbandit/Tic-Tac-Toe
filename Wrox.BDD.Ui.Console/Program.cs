@@ -10,6 +10,8 @@ namespace Wrox.BDD.Ui.Console
         static void Main(string[] args)
         {
             var game = new ConsoleGameView();
+
+            System.Console.ReadLine();
         }
     }
 }

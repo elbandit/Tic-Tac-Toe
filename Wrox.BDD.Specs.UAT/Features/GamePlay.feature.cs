@@ -197,7 +197,7 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("a player types in the coordinates \"rrr,fff\"");
 #line hidden
 #line 107
-    testRunner.Then("I should see the following displayed:", "rrr,fff are invalid coordinates for a move, please use the format col,row.\r\n\r\n   " +
+    testRunner.Then("I should see the following displayed:", "rrr,fff are invalid coordinates for a move, please use the format row,col.\r\n\r\n   " +
                     "|   |   \r\n-----------\r\n   |   |   \r\n-----------\r\n   |   |   \r\n\r\nX, make your mov" +
                     "e.\r\n\r\n", ((TechTalk.SpecFlow.Table)(null)));
 #line hidden

@@ -73,7 +73,7 @@ namespace Wrox.BDD.Ui.Console.Presentation
             }
             else
             {
-                _game_view.write_line(String.Format("{0} are invalid coordinates for a move, please use the format col,row.", move_coordinates));
+                _game_view.write_line(String.Format("{0} are invalid coordinates for a move, please use the format row,col.", move_coordinates));
                 _game_view.write_line("");
             }
         }

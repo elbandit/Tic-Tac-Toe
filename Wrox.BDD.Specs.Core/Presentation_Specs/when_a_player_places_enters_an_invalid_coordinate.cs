@@ -26,7 +26,7 @@ namespace Wrox.BDD.Specs.Core.Presentation_Specs
                        
         private It should_display_that_the_inputted_coordinate_is_not_valid = () =>
         {
-            game_view.AssertWasCalled(x => x.write_line("rrr,fff are invalid coordinates for a move, please use the format col,row."));
+            game_view.AssertWasCalled(x => x.write_line("rrr,fff are invalid coordinates for a move, please use the format row,col."));
         };
 
         private static Coordinate coordinate;

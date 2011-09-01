@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColumnWinningLineChecker.cs" />
     <Compile Include="Coordinate.cs" />
+    <Compile Include="RowWinningLineChecker.cs" />
     <Compile Include="DiagonalWinningLineChecker.cs" />
     <Compile Include="DomainException.cs" />
     <Compile Include="EmptyPlayingSquare.cs" />
@@ -51,6 +53,7 @@
     <Compile Include="InvalidMoveReason.cs" />
     <Compile Include="LineChecker.cs" />
     <Compile Include="NineSquareGrid.cs" />
+    <Compile Include="NineSquareGridWinningLineChecker.cs" />
     <Compile Include="PlayerTracker.cs" />
     <Compile Include="PlayingSquare.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

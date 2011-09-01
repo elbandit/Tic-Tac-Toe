@@ -106,7 +106,7 @@ Scenario: Inputting invalid data
 	When a player types in the coordinates "rrr,fff"
     Then I should see the following displayed:
       """
-	  rrr,fff are invalid coordinates for a move, please use the format col,row.
+	  rrr,fff are invalid coordinates for a move, please use the format row,col.
 
          |   |   
       -----------

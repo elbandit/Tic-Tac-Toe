@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain_Specs\when_checking_if_game_has_a_3_in_tokens_in_a_row.cs" />
+    <Compile Include="Domain_Specs\when_checking_if_game_has_a_3_in_tokens_in_a_column.cs" />
     <Compile Include="Domain_Specs\when_parsing_an_invalid_coordinate.cs" />
     <Compile Include="Domain_Specs\when_checking_if_game_has_a_3_in_a_diagonal_line_right_to_left.cs" />
     <Compile Include="Domain_Specs\when_checking_if_a_full_grid_is_full.cs" />
